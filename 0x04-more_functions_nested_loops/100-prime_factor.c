@@ -1,6 +1,6 @@
 #include <stdio.h>
 /**
-* main - program `entry 
+* main - program `entry
 * @void: no argument
 * Return: 0
 */
