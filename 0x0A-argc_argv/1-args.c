@@ -1,19 +1,19 @@
-#include "main.h"
 #include <stdio.h>
-#include <stdlib.h>
-/**
- * main - prints the number of args passed into it
- * @argc: number of command lines,sizeof argv
- * @argv: contains the program command line
- * Return: 0
- */
-int main(int argc, char *argv[])
-{
+#include "main.h"
 
-if (argc)
+/**
+ * main - entry point, print the number of args passed to main
+ * @argc: number of args passed to main
+ * @argv: strings passed to main
+ *
+ * Return: (0) Success
+ **/
+
+int main(int argc, char *argv[]__attribute__((unused)))
 {
-	printf("%d\n", argc-1);
-	(void)argv;
-}
-return (0);
+	if (argc > 0)
+	{
+		printf("%d\n", (argc - 1));
+	}
+	return (0);
 }
