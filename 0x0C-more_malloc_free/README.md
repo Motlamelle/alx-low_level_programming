@@ -1,0 +1,1 @@
+exit, calloc and realloc
