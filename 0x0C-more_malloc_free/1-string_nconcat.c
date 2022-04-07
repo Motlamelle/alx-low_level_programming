@@ -1,65 +1,47 @@
 #include "main.h"
-#include <stdio.h>
 #include <stdlib.h>
-
+#include <stdio.h>
 /**
- * _strlen - return the length of a string
- * @s: string to evaluate
+ * string_nconcat - concatenates two strings
+ * @s1: pointer to first string.
+ * @s2: pointer to 2nd string.
+ * @n: Number of bytes from n2 to concatenate.
  *
- * Return: length of a string
- **/
-
-int _strlen(char *s)
-{
-	int i;
-
-	i = 0;
-
-	while (s[i] != '\0')
-		i++;
-	return (i);
-}
-
-/**
- * string_nconcat - concatenate two strings,
- * s2 up to n bytes
- * @s1: first string
- * @s2: second string
- * @n: number of bytes of s2 to concatenate
- *
- * Return: pointer to new concatenated string (SUCCESS); NULL (FAILURE)
- **/
-
+ * Return:Pointer to space in memory containing concatenated string.
+ */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	unsigned int i, j, len1;
-	char *ptr;
+	char *str;
+	unsigned int i, j, s1_length, s2_length;
 
-	i = 0;
-	j = 0;
-
-	if (s1 != NULL)
-		len1 = _strlen(s1);
-	else
-		len1 = 0;
-
+/*Check if the strings passed are null*/
+	if (s1 == NULL)
+		s1 = "";
 	if (s2 == NULL)
 		s2 = "";
+/*Compute the length of the strings*/
 
-	ptr = malloc(len1 + n + 1);
+	for (s1_length = 0; s1[s1_length] != '\0'; s1_length++)
+		;
 
-	if (ptr == NULL)
+	for (s2_length = 0; s2[s2_length] != '\0'; s2_length++)
+		;
+/*Memory reservation: for case 1 & 2.*/
+	str = malloc(s1_length + n + 1);
+	if (str == NULL)
+	{
 		return (NULL);
-
+	}
+/*Copy 1st string into str.*/
 	for (i = 0; s1[i] != '\0'; i++)
+		str[i] = s1[i];
+/*Copy 2nd string into str.*/
+	for (j = 0; j < n; j++)
 	{
-		ptr[i] = s1[i];
+		str[i] = s2[j];
+		i++;
 	}
 
-	for (j = 0; j < n; i++, j++)
-	{
-		ptr[i] = s2[j];
-	}
-	ptr[i] = '\0';
-	return (ptr);
+	str[i] = '\0';
+	return (str);
 }
