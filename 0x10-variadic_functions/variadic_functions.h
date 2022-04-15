@@ -24,4 +24,4 @@ typedef struct printTypeStruct
 	void (*printer)(va_list);
 } printTypeStruct;
 
-#endif#
+#endif
