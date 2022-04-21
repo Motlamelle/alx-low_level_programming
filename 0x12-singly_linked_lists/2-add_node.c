@@ -3,7 +3,8 @@
 #include <string.h>
 
 /**
- * add_node - adds a new node to linked list
+ * add_node - adds a new node at the beginning of
+ * linked list
  * @head: double pointer to linked list
  * @str: string pointer
  *
