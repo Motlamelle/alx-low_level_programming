@@ -21,14 +21,11 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	if (new == NULL)
 		return (0);
 
-	/* set the new node */
-	new->next = NULL;
-	new->n = n;
-
 	/* if idx = 0, add node at the beginning of list */
 	if (idx == 0)
 	{
 		new->next = *head;
+		new->n = n;
 		(*head) = new;
 		return (new);
 	}
@@ -46,5 +43,5 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		cursor = cursor->next;
 	}
 	free(new);
-	return (0);
+	return (NULL);
 }
