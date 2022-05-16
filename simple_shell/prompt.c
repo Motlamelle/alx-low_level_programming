@@ -4,12 +4,12 @@
 #include "main.h"
 
 /**
- * main- entry point
+ * get_prompt- read a command from std input
  *
- * Return: Always 0
+ * Return: the command
  */
 
-int main(void)
+char *get_prompt(void)
 {
 	char *buf;
 	size_t size = 64;
@@ -19,8 +19,5 @@ int main(void)
 	printf("$ ");
 	getline(&buf, &size, stdin);
 
-	printf("%s", buf);
-
-	free(buf);
-	return (0);
+	return (buf);
 }

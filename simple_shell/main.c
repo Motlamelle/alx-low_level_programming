@@ -12,9 +12,9 @@ int main(void)
 {
 	char *command;
 
-	printf("%s ", "$");
-	command = getprompt();
+	command = get_prompt();
 
-	free(command);
+	printf("%s\n", command);
+
 	return (0);
 }

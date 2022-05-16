@@ -1,6 +1,6 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-char *getprompt(void);
+char *get_prompt(void);
 
 #endif

@@ -5,17 +5,19 @@
 #include "main.h"
 
 /**
- * main- entry point
+ * split_line- splits a command line into strings
+ * @str: input line
  *
- * Return: Always 0
+ * Return: Array of strings
  */
 
-int main(void)
+char **split_line(char *str)
 {
 	int j, i = 0;
-	char str[80] = "hello world";
+	int bufsize = 64;
 	char *res;
-	char *tokens[20];
+
+	char **tokens = malloc(bufsize * sizeof(char *));
 
 	/*get first token */
 	tokens[i++] = strtok(str, " ");
@@ -25,12 +27,12 @@ int main(void)
 	{
 		tokens[i++] = res;
 	}
-	
-	token [i] = NULL;
+
+	token[i] = NULL;
 
 	/*print tokens */
 	for (j = 0; j < i; j++)
 		printf("%s\n", tokens[j]);
 
-	return (0);
+	return (tokens);
 }
